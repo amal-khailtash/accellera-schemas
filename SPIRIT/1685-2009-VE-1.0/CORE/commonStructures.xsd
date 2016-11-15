@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+File: CORE/commonStructures.xsd
+Author: The Accellera IP-XACT Extensions Working Group
+
+Copyright (c) 2013 Accellera Systems Initiative Inc.
+1370 Trancas Street #163, Napa, CA 94558, USA
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Suggestions for improvements to the Recommend Extensions to
+IEEE 1685-2009 are welcome. They should be sent to the group's
+email Reflector:
+
+  ip-xact@lists.accellera.org
+
+The current IP-XACT Technical Committee web page is:
+
+  www.accellera.org/activities/committees/ip-xact
+-->
+<xs:schema xmlns:accellera-core="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/CORE-1.0" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/CORE-1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+  <xs:import namespace="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" schemaLocation="../../1685-2009/index.xsd"/>
+  <xs:include schemaLocation="autoConfigure.xsd"/>
+  <xs:element name="portParameter">
+    <xs:annotation>
+      <xs:documentation>A name value pair.  The name is specified by the name element.  The value is in the text content of the value element.  This value element supports all configurability attributes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="accellera-core:nameValuePairType"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="portParameters">
+    <xs:annotation>
+      <xs:documentation>A collection of parameters.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="accellera-core:portParameter" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="nameValuePairType">
+    <xs:annotation>
+      <xs:documentation>Name and value type for use in resolvable elements</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="spirit:nameGroupString"/>
+      <xs:element ref="spirit:vector" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Definition of the indices for a vectored port parameter. This vector must be a sub-vector of the port. If this element is not present then the parameter applies to all port vector elements.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="value">
+        <xs:annotation>
+          <xs:documentation>The value of the parameter.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attributeGroup ref="spirit:string.prompt.att"/>
+              <xs:attributeGroup ref="accellera-core:unit.att"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##any" processContents="lax"/>
+  </xs:complexType>
+</xs:schema>

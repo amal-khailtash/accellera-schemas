@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+File: AMS/wire.xsd
+Author: The Accellera IP-XACT Extensions Working Group
+
+Copyright (c) 2013 Accellera Systems Initiative Inc.
+1370 Trancas Street #163, Napa, CA 94558, USA
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Suggestions for improvements to the Recommend Extensions to
+IEEE 1685-2009 are welcome. They should be sent to the group's
+email Reflector:
+
+  ip-xact@lists.accellera.org
+
+The current IP-XACT Technical Committee web page is:
+
+  www.accellera.org/activities/committees/ip-xact
+-->
+<xs:schema xmlns:accellera-ams="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/AMS-1.0" xmlns:accellera="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/AMS-1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+  <xs:import namespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" schemaLocation="../index.xsd"/>
+  <xs:group name="wire">
+    <xs:annotation>
+      <xs:documentation>Wire port ams extension.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="accellera-ams:domainTypeDefs" minOccurs="0"/>
+      <xs:element ref="accellera-ams:signalTypeDefs" minOccurs="0"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="domainTypeDef">
+    <xs:annotation>
+      <xs:documentation>Definition of a single wire type definition that can relate to multiple views.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="typeName">
+          <xs:annotation>
+            <xs:documentation>The name of the domain type. Examples could be ddiscrete, electrical, ...</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string"/>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="typeDefinition" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Where the definition of the type is contained. For Verilog-AMS, it is the include file required.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="accellera:viewNameRef" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="domainTypeDefs">
+    <xs:annotation>
+      <xs:documentation>The group of domain type definitions. If no match to a viewName is found then the default language types are to be used. See the User Guide for these default types.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="accellera-ams:domainTypeDef" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Definition of a single domain type definition that can relate to multiple views.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="domainTypeDefsKey">
+      <xs:selector xpath="accellera-ams:domainTypeDef/accellera:viewNameRef"/>
+      <xs:field xpath="."/>
+    </xs:key>
+  </xs:element>
+  <xs:simpleType name="signalType">
+    <xs:annotation>
+      <xs:documentation>The signal type of a component port.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="continuous-conservative"/>
+      <xs:enumeration value="continuous-non-conservative"/>
+      <xs:enumeration value="discrete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="signalType" type="accellera-ams:signalType">
+    <xs:annotation>
+      <xs:documentation>The type of the signal. Possible values are continuous-conservative, continuous-non-conservative, and discrete.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="signalTypeDef">
+    <xs:annotation>
+      <xs:documentation>Definition of a single signal type definition that can relate to multiple views.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="accellera-ams:signalType"/>
+        <xs:element ref="accellera:viewNameRef" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="signalTypeDefs">
+    <xs:annotation>
+      <xs:documentation>The group of signal type definitions. If no match to a viewName is found then the signal type defaults to discrete.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="accellera-ams:signalTypeDef" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Definition of a single signal type definition that can relate to multiple views.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="signalTypeDefsKey">
+      <xs:selector xpath="accellera-ams:signalTypeDef/accellera:viewNameRef"/>
+      <xs:field xpath="."/>
+    </xs:key>
+  </xs:element>
+</xs:schema>

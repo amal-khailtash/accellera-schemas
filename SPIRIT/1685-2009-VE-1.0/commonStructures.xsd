@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+File: commonStructures.xsd
+Author: The Accellera IP-XACT Extensions Working Group
+
+Copyright (c) 2013 Accellera Systems Initiative Inc.
+1370 Trancas Street #163, Napa, CA 94558, USA
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Suggestions for improvements to the Recommend Extensions to
+IEEE 1685-2009 are welcome. They should be sent to the group's
+email Reflector:
+
+  ip-xact@lists.accellera.org
+
+The current IP-XACT Technical Committee web page is:
+
+  www.accellera.org/activities/committees/ip-xact
+-->
+<xs:schema xmlns:accellera="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" elementFormDefault="qualified" attributeFormDefault="qualified">
+  <xs:element name="nameRef" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Reference to an existing spirit name in the file.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="viewNameRef" type="xs:NMTOKEN">
+    <xs:annotation>
+      <xs:documentation>A reference to an existing spirit view name in the file.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

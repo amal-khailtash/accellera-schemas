@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+File: CORE/autoConfigure.xsd
+Author: The Accellera IP-XACT Extensions Working Group
+
+Copyright (c) 2013 Accellera Systems Initiative Inc.
+1370 Trancas Street #163, Napa, CA 94558, USA
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Suggestions for improvements to the Recommend Extensions to
+IEEE 1685-2009 are welcome. They should be sent to the group's
+email Reflector:
+
+  ip-xact@lists.accellera.org
+
+The current IP-XACT Technical Committee web page is:
+
+  www.accellera.org/activities/committees/ip-xact
+-->
+<xs:schema xmlns:accellera-core="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/CORE-1.0" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/CORE-1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+  <xs:import namespace="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" schemaLocation="../../1685-2009/index.xsd"/>
+  <xs:attribute name="prefix">
+    <xs:annotation>
+      <xs:documentation>Defines the prefix that precedes the unit of a value. The prefix is not applied to the value (e.g. in calculations).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="deca"/>
+        <xs:enumeration value="hecto"/>
+        <xs:enumeration value="kilo"/>
+        <xs:enumeration value="mega"/>
+        <xs:enumeration value="giga"/>
+        <xs:enumeration value="tera"/>
+        <xs:enumeration value="peta"/>
+        <xs:enumeration value="exa"/>
+        <xs:enumeration value="zetta"/>
+        <xs:enumeration value="yotta"/>
+        <xs:enumeration value="deci"/>
+        <xs:enumeration value="centi"/>
+        <xs:enumeration value="milli"/>
+        <xs:enumeration value="micro"/>
+        <xs:enumeration value="nano"/>
+        <xs:enumeration value="pico"/>
+        <xs:enumeration value="femto"/>
+        <xs:enumeration value="atto"/>
+        <xs:enumeration value="zepto"/>
+        <xs:enumeration value="yocto"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="unit">
+    <xs:annotation>
+      <xs:documentation>Defines the unit of the value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="second"/>
+        <xs:enumeration value="ampere"/>
+        <xs:enumeration value="kelvin"/>
+        <xs:enumeration value="hertz"/>
+        <xs:enumeration value="joule"/>
+        <xs:enumeration value="watt"/>
+        <xs:enumeration value="coulomb"/>
+        <xs:enumeration value="volt"/>
+        <xs:enumeration value="farad"/>
+        <xs:enumeration value="ohm"/>
+        <xs:enumeration value="siemens"/>
+        <xs:enumeration value="henry"/>
+        <xs:enumeration value="Celsius"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attributeGroup name="unit.att">
+    <xs:annotation>
+      <xs:documentation>Attribute extension describing SI units and unit prefixes.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute ref="accellera-core:prefix"/>
+    <xs:attribute ref="accellera-core:unit"/>
+  </xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+File: index.xsd
+Author: The Accellera IP-XACT Extensions Working Group
+
+Copyright (c) 2013 Accellera Systems Initiative Inc.
+1370 Trancas Street #163, Napa, CA 94558, USA
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Suggestions for improvements to the Recommend Extensions to
+IEEE 1685-2009 are welcome. They should be sent to the group's
+email Reflector:
+
+  ip-xact@lists.accellera.org
+
+The current IP-XACT Technical Committee web page is:
+
+  www.accellera.org/activities/committees/ip-xact
+-->
+<xs:schema xmlns:accellera="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" elementFormDefault="qualified" attributeFormDefault="qualified">
+  <xs:include schemaLocation="commonStructures.xsd"/>
+  <xs:include schemaLocation="logicalPort.xsd"/>
+  <xs:include schemaLocation="component.xsd"/>
+  <xs:include schemaLocation="view.xsd"/>
+  <xs:include schemaLocation="port.xsd"/>
+  <xs:include schemaLocation="wire.xsd"/>
+  <xs:include schemaLocation="componentInstance.xsd"/>
+  <xs:group name="AccelleraVendorExtensionsDocumentTypes">
+    <xs:annotation>
+      <xs:documentation>This IP-XACT schema documentation is part of the IP-XACT Acellera vendor extensions deliverables. The diagrams in this documentation represent the relationships between elements of the schema together with their attributes and expected values. Valid Accellera Vendor Extensions must have a top-level type that is one of the elements listed here.</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element ref="accellera:logicalWire" minOccurs="0"/>
+      <xs:element ref="accellera:component" minOccurs="0"/>
+      <xs:element ref="accellera:view" minOccurs="0"/>
+      <xs:element ref="accellera:port" minOccurs="0"/>
+      <xs:element ref="accellera:wire" minOccurs="0"/>
+      <xs:element ref="accellera:componentInstance" minOccurs="0"/>
+    </xs:choice>
+  </xs:group>
+</xs:schema>

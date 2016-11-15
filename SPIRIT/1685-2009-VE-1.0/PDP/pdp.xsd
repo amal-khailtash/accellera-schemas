@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+File: PDP/pdp.xsd
+Author: The Accellera IP-XACT Extensions Working Group
+
+Copyright (c) 2013 Accellera Systems Initiative Inc.
+1370 Trancas Street #163, Napa, CA 94558, USA
+
+Licensed under the Apache License, Version 2.0 (the 'License');
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an 'AS IS' BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Suggestions for improvements to the Recommend Extensions to
+IEEE 1685-2009 are welcome. They should be sent to the group's
+email Reflector:
+
+  ip-xact@lists.accellera.org
+
+The current IP-XACT Technical Committee web page is:
+
+  www.accellera.org/activities/committees/ip-xact
+-->
+<xs:schema xmlns:accellera-pdp="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/PDP-1.0" xmlns:accellera="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE/PDP-1.0" elementFormDefault="qualified" attributeFormDefault="qualified">
+  <xs:import namespace="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" schemaLocation="../../1685-2009/index.xsd"/>
+  <xs:import namespace="http://www.accellera.org/XMLSchema/SPIRIT/1685-2009-VE" schemaLocation="../index.xsd"/>
+  <xs:element name="technologyName">
+    <xs:annotation>
+      <xs:documentation>Technology name.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute ref="accellera-pdp:type"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:attribute name="type">
+    <xs:annotation>
+      <xs:documentation>Defines the type of implementation (ASIC or FPGA).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="ASIC"/>
+        <xs:enumeration value="FPGA"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:element name="areaEstimation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="gateArea">
+          <xs:annotation>
+            <xs:documentation>The standard cell area (in mm2 or logic cells) out of synthesis, without taking into account any extra space.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attributeGroup ref="spirit:float.prompt.att"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="macroArea" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>The area (in mm2 or logic cells) of the other cells (macro, memories) that are part of the component. If not provided, it is assumed to be zero, i.e. the component is assumed to be made of logic cells only.
+</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attributeGroup ref="spirit:float.prompt.att"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="maxMacroWidth" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>The width in mm of the biggest macro that may constraint the component floorplan.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attributeGroup ref="spirit:float.prompt.att"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="maxMacroHeight" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>The height in mm of the biggest macro that may constraint the component floorplan.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attributeGroup ref="spirit:float.prompt.att"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="totalArea" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>The estimated area (in mm2 or logic cells) of the component after physical implementation. The difference between totalArea and the sum of (gateArea + macroArea) typically represents provision for routing, congestion and floorplan constraints as estimated by the provider.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attributeGroup ref="spirit:float.prompt.att"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerCount">
+    <xs:annotation>
+      <xs:documentation>The number of sequential elements (i.e. leaf cells) seen by each clock port. This value may be dependent on one or more parameters to account for configurable IPs.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:long">
+          <xs:attributeGroup ref="spirit:long.prompt.att"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="combinationalPaths">
+    <xs:annotation>
+      <xs:documentation>A list of combinational paths crossing the component by means of output ports (sink) directly dependent on input ports (sources).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="combinationalPath" type="accellera-pdp:combinationalPathDef" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="combinationalPathDef">
+    <xs:sequence>
+      <xs:element ref="spirit:vector" minOccurs="0"/>
+      <xs:element name="sources" type="accellera-pdp:nameRefVectorPairs"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="nameRefVectorPairs">
+    <xs:sequence>
+      <xs:element name="source" type="accellera-pdp:nameRefVectorPair" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="nameRefVectorPair">
+    <xs:sequence>
+      <xs:element ref="accellera:nameRef"/>
+      <xs:element ref="spirit:vector" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="fileType">
+    <xs:annotation>
+      <xs:documentation>Enumerated file types known by Standard PDP Extension.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="LEF"/>
+        <xs:enumeration value="XDC"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>
