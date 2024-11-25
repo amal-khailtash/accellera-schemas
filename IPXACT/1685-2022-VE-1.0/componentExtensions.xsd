@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to Accellera Systems Initiative Inc. (Accellera) under one or
+  more contributor license agreements.  See the NOTICE file distributed
+  with this work for additional information regarding copyright ownership.
+  Accellera licenses this file to you under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with the
+  License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+  implied.  See the License for the specific language governing
+  permissions and limitations under the License.
+-->
+<xs:schema xmlns:accellera="http://www.accellera.org/XMLSchema/IPXACT/1685-2022-VE" xmlns:accellera-cond="http://www.accellera.org/XMLSchema/IPXACT/1685-2022-VE/COND-1.0" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2022" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/IPXACT/1685-2022-VE" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:import namespace="http://www.accellera.org/XMLSchema/IPXACT/1685-2022-VE/COND-1.0" schemaLocation="COND/isPresent.xsd"/>
+	<xs:element name="addressBlock">
+		<xs:annotation>
+			<xs:documentation>addressBlock isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="addressSpace">
+		<xs:annotation>
+			<xs:documentation>addressSpace isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="addressSpaceRef">
+		<xs:annotation>
+			<xs:documentation>addressSpaceRef isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="alternateRegister">
+		<xs:annotation>
+			<xs:documentation>alternateRegister isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bank">
+		<xs:annotation>
+			<xs:documentation>bank isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="busInterface">
+		<xs:annotation>
+			<xs:documentation>busInterface isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="busInterfaceRef">
+		<xs:annotation>
+			<xs:documentation>busInterfaceRef isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="channel">
+		<xs:annotation>
+			<xs:documentation>channel isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="constraintSetRef">
+		<xs:annotation>
+			<xs:documentation>constraintSetRef isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="cpu">
+		<xs:annotation>
+			<xs:documentation>cpu isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="field">
+		<xs:annotation>
+			<xs:documentation>field isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="file">
+		<xs:annotation>
+			<xs:documentation>file isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fileSetRef">
+		<xs:annotation>
+			<xs:documentation>fileSetRef isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="localMemoryMap">
+		<xs:annotation>
+			<xs:documentation>localMemoryMap isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="memoryMap">
+		<xs:annotation>
+			<xs:documentation>memoryMap isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="memoryRemap">
+		<xs:annotation>
+			<xs:documentation>memoryRemap isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="moduleParameter">
+		<xs:annotation>
+			<xs:documentation>moduleParameter isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="port">
+		<xs:annotation>
+			<xs:documentation>port isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="portMap">
+		<xs:annotation>
+			<xs:documentation>portMap isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="register">
+		<xs:annotation>
+			<xs:documentation>register isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="registerFile">
+		<xs:annotation>
+			<xs:documentation>registerFile isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="segment">
+		<xs:annotation>
+			<xs:documentation>segment isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subspaceMap">
+		<xs:annotation>
+			<xs:documentation>subspaceMap isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="typeParameter">
+		<xs:annotation>
+			<xs:documentation>typeParameter isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="transparentBridge">
+		<xs:annotation>
+			<xs:documentation>transparentBridge isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="view">
+		<xs:annotation>
+			<xs:documentation>view isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="clearboxElement">
+		<xs:annotation>
+			<xs:documentation>clearboxElement isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="clearboxElementRef">
+		<xs:annotation>
+			<xs:documentation>clearboxElementRef isPresent extension.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="accellera-cond:isPresent"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

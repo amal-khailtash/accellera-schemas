@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to Accellera Systems Initiative Inc. (Accellera) under one or
+  more contributor license agreements.  See the NOTICE file distributed
+  with this work for additional information regarding copyright ownership.
+  Accellera licenses this file to you under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with the
+  License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+  implied.  See the License for the specific language governing
+  permissions and limitations under the License.
+-->
+<xs:schema xmlns:accellera="http://www.accellera.org/XMLSchema/IPXACT/1685-2022-VE" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/IPXACT/1685-2022-VE" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="componentExtensions.xsd"/>
+	<xs:group name="component">
+		<xs:annotation>
+			<xs:documentation>Component extension.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="accellera:addressBlock" minOccurs="0"/>
+			<xs:element ref="accellera:addressSpace" minOccurs="0"/>
+			<xs:element ref="accellera:addressSpaceRef" minOccurs="0"/>
+			<xs:element ref="accellera:alternateRegister" minOccurs="0"/>
+			<xs:element ref="accellera:bank" minOccurs="0"/>
+			<xs:element ref="accellera:busInterface" minOccurs="0"/>
+			<xs:element ref="accellera:busInterfaceRef" minOccurs="0"/>
+			<xs:element ref="accellera:channel" minOccurs="0"/>
+			<xs:element ref="accellera:constraintSetRef" minOccurs="0"/>
+			<xs:element ref="accellera:cpu" minOccurs="0"/>
+			<xs:element ref="accellera:field" minOccurs="0"/>
+			<xs:element ref="accellera:file" minOccurs="0"/>
+			<xs:element ref="accellera:fileSetRef" minOccurs="0"/>
+			<xs:element ref="accellera:localMemoryMap" minOccurs="0"/>
+			<xs:element ref="accellera:memoryMap" minOccurs="0"/>
+			<xs:element ref="accellera:memoryRemap" minOccurs="0"/>
+			<xs:element ref="accellera:moduleParameter" minOccurs="0"/>
+			<xs:element ref="accellera:port" minOccurs="0"/>
+			<xs:element ref="accellera:portMap" minOccurs="0"/>
+			<xs:element ref="accellera:register" minOccurs="0"/>
+			<xs:element ref="accellera:registerFile" minOccurs="0"/>
+			<xs:element ref="accellera:segment" minOccurs="0"/>
+			<xs:element ref="accellera:subspaceMap" minOccurs="0"/>
+			<xs:element ref="accellera:transparentBridge" minOccurs="0"/>
+			<xs:element ref="accellera:typeParameter" minOccurs="0"/>
+			<xs:element ref="accellera:view" minOccurs="0"/>
+			<xs:element ref="accellera:clearboxElement" minOccurs="0"/>
+			<xs:element ref="accellera:clearboxElementRef" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>
