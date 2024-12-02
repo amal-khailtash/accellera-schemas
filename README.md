@@ -1,4 +1,4 @@
-# Accellera (SPIRIT) IP-XACT XML Schemas
+# Accellera SPIRIT/IP-XACT XML Schemas
 
 This is a mirror of Accellera (SPIRIT) IP-XACT XSD schemas[^1] with small fixes.
 
