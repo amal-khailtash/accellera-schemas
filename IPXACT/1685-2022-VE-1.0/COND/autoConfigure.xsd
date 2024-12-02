@@ -16,8 +16,8 @@
   permissions and limitations under the License.
 -->
 <xs:schema xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2022" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.accellera.org/XMLSchema/IPXACT/1685-2022" elementFormDefault="qualified">
-	<xs:import schemaLocation="xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
-  <xs:include schemaLocation="simpleTypes.xsd"/>
+  <xs:import schemaLocation="http://www.w3.org/2001/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
+  	<xs:include schemaLocation="simpleTypes.xsd"/>
 	<xs:simpleType name="formatType">
 		<xs:annotation>
 			<xs:documentation>This is an indication on the format of the value. bit: 1-bit or more (vector) bits unsigned integer, byte: 8-bit signed integer, shortint: 16-bit signed integer, int: 32-bit signed integer, longint: 64-bit signed integer, shortreal: 32-bit signed floating point number, real: 64-bit signed floating point number, string: textual information.</xs:documentation>
@@ -94,7 +94,7 @@
 													<xs:documentation>Text that may be displayed if the user requests help about the meaning of an element</xs:documentation>
 												</xs:annotation>
 											</xs:attribute>
-                      <xs:attributeGroup ref="ipxact:id.att"/>											
+                      <xs:attributeGroup ref="ipxact:id.att"/>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>

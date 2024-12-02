@@ -1,7 +1,17 @@
 Accellera (SPIRIT) IP-XACT XML Schemas
 ======================================
 
-This is a mirror of [Accellera (SPIRIT) IP-XACT][1] XSD schemas.
+This is a mirror of [Accellera (SPIRIT) IP-XACT][1] XSD schemas with small fixes.
+
+Bug fixes
+---------
+
+Here are the list of things that are fixed and different from Accellera original release.
+
+* Improper xs:import usage:
+  * [xsdata.exceptions.ParserError](https://github.com/tefra/xsdata/issues/1096)
+  * [Wrong xs:import in IPXACT/1685-2022-VE-1.0 XSD schema](https://forums.accellera.org/topic/8099-wrong-xsimport-in-ipxact1685-2022-ve-10-xsd-schema/)
+
 
 References
 ----------
