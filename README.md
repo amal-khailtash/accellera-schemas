@@ -1,10 +1,8 @@
-Accellera (SPIRIT) IP-XACT XML Schemas
-======================================
+# Accellera (SPIRIT) IP-XACT XML Schemas
 
-This is a mirror of [Accellera (SPIRIT) IP-XACT][1] XSD schemas with small fixes.
+This is a mirror of Accellera (SPIRIT) IP-XACT XSD schemas[^1] with small fixes.
 
-Bug fixes
----------
+## Bug fixes
 
 Here are the list of things that are fixed and different from Accellera original release.
 
@@ -13,8 +11,7 @@ Here are the list of things that are fixed and different from Accellera original
   * [Wrong xs:import in IPXACT/1685-2022-VE-1.0 XSD schema](https://forums.accellera.org/topic/8099-wrong-xsimport-in-ipxact1685-2022-ve-10-xsd-schema/)
 
 
-References
-----------
+## References
 
 * [Accellera IP-XACT Technical Committee](http://www.accellera.org/activities/committees/ip-xact/)
   * [Accellera SPIRIT IP-XACT Schemas](http://www.accellera.org/XMLSchema)
@@ -37,7 +34,8 @@ References
 * [System Level Design with .NET Technology](http://www-etud.iro.umontreal.ca/~ptidej/yann-gael/Work/Publications/Documents/NET09.doc.pdf)
 * [Denali](http://www.denali.com/en/products/blueprint.jsp)
 * [Duolog](http://www.duolog.com/)
-* [Magillem](http://www.magillem.com/eda/)
+* [Arteris](https://www.arteris.com/)
+  * Formerly [Magillem](http://www.magillem.com/eda/)
 * [Productive-EDA](http://www.productive-eda.com/)
 
-[1]: http://www.accellera.org/XMLSchema "Accellera SPIRIT IP-XACT Schemas"
+[^1]: http://www.accellera.org/XMLSchema "Accellera SPIRIT IP-XACT Schemas"
